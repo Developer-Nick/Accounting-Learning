@@ -12,3 +12,4 @@ Here you can edit the financial statements in the database
 
 Finally, you can also play quizzes that test accounting knowledge.
 <img width="1077" height="267" alt="image" src="https://github.com/user-attachments/assets/98830a88-68f4-4f56-88d8-841de4b08b44" />
+<img width="430" height="102" alt="image" src="https://github.com/user-attachments/assets/91a308aa-2d11-4b22-ba7b-1dbc070d8adf" />

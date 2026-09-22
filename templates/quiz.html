@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Financial Statements Learner - Quiz page</title>
+{% endblock %}
+
+{% block body %}
+    <div class="Heading">
+      <h2>Quiz</h2>
+      <a href="http://127.0.0.1:5000">Viewer</a>
+      <a href="http://127.0.0.1:5000/editor">Editor</a>
+    </div>
+    <div class="AllQuizzes"></div>
+
+    <footer>
+        <h3 id="AverageScore" class="AverageScore"></h3>
+    </footer>
+    {% block content %}
+    <script>
+      //name, score, total questions, id
+      var Quizzes = {{ data | tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/quiz/quiz.js') }}"></script>
+    {% endblock %}
+{% endblock %}

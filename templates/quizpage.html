@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Financial Statements Learner - Quiz page</title>
+{% endblock %}
+
+{% block body %}
+    <div class="Heading">
+      <h2>Quiz</h2>
+    </div>
+
+    <form id="testing">
+      <div class="Question" id="Question"></div>
+      <input type="text" id="Answer" name="Answer">
+      <button type="submit">Submit</button>
+    </form>
+
+    <div style="visibility: hidden;" id="Result">
+      <h1>Results:</h1>
+      <h2 id="NumCorrectAnswers"></h2>
+      <button id="Next">Next</button>
+    </div>
+
+
+    {% block content %}
+
+    <script>
+      var Answers = {{ data.answers | tojson }};
+      var Questions = {{ data.questions | tojson }};
+      var previousscore = "{{ data.previous_score }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/quiz/quizpage.js') }}"></script>
+    {% endblock %}
+{% endblock %}

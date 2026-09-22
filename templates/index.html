@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Financial Statements Learner</title>
+{% endblock %}
+
+{% block body %}
+    <div class="Heading">
+      <h3>Financial Statements</h3>
+      <a href="http://127.0.0.1:5000/editor">Editor</a>
+      <a href="http://127.0.0.1:5000/quiz">Quiz</a>
+    </div>
+
+    <div class="dropdown-container" id="companydropdown">
+      <label for="company-id" class="dropdown-label">Company ID:</label>
+      <select id="company-id" class="dropdown">
+
+      </select>
+    </div>
+
+    <div class="dropdown-container" id="yeardropdown">
+        <label for="year" class="dropdown-label">Year:</label>
+        <select id="year" class="dropdown">
+
+        </select>
+    </div>
+
+    <table id="IncomeStm">
+      <tr>
+          <th class="CellWithComment">Income Statement<span class="CellComment">"An income statement or profit and loss account is one of the financial statements of a company and shows the company's revenues and expenses during a particular period. It indicates how the revenues are transformed into the net income or net profit."</span></th>
+          <th>£</th>
+          <th>£</th>
+      </tr>
+    </table>
+
+    <table id="SofpTable">
+      <tr>
+          <th class="CellWithComment">Statement of Financial Position<span class="CellComment">"A balance sheet shows a companies assets, liabilities and equity at a set time"</span></th>
+          <th>£</th>
+          <th>£</th>
+          <th>£</th>
+      </tr>
+    </table>
+
+    <table id="MarginsTable">
+      <tr>
+          <th>Financial Information:</th>
+          <th></th>
+      </tr>
+    </table>
+
+    {% block content %}
+    <script type="text/javascript">
+      // Importing income statement data from Python
+      var imported_revenue = "{{ data.revenue }}";
+      var imported_openinginv = "{{ data.openinginv }}";
+      var imported_purchases = "{{ data.purchases }}";
+      var imported_purchasesreturns = "{{ data.purchasereturns }}";
+      var imported_carriageinwards = "{{ data.carriageinwards }}";
+      var imported_closinginv = "{{ data.closinginv }}";
+      var imported_expenses = {{ data.expenses | tojson }};
+      var imported_sundryincome = {{ data.sundryincome | tojson }};
+      var limitedcompany = "{{ data.limitedCompany }}";
+      var imported_financecosts = "{{ data.financecosts }}";
+      var imported_tax = "{{ data.tax }}";
+
+      // Importing SoFP data from python
+      var NCA = {{ data.NCA | tojson }};
+      var NCL = {{ data.NCL | tojson }};
+      var CA = {{ data.CA | tojson }};
+      var CL = {{ data.CL | tojson }};
+      var ISC = {{ data.ISC | tojson }};
+      var CR = {{ data.CR | tojson }};
+      var RR = {{ data.RR | tojson }};
+      var openingcapital = "{{ data.openingcapital }}";
+      var drawings = "{{ data.drawings }}";
+
+      const imported_companyoptions = {{ data.companyoptions|tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/index/main.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/index/edunotes.js') }}"></script>  
+  {% endblock %}
+{% endblock %}

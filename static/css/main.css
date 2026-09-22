@@ -1,0 +1,97 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin: 2%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.CellWithComment{position:relative;}
+
+.CellComment
+{
+  visibility: hidden;
+  width: auto;
+  position:absolute; 
+  z-index:100;
+  text-align: Left;
+  opacity: 0.4;
+  transition: opacity 0.5s;
+  border-radius: 6px;
+  background-color: lightblue;
+  padding:3px;
+  top:-30px; 
+  left:0px;
+  font-weight: normal;
+}   
+
+.CellWithComment:hover span.CellComment {visibility: visible;opacity: 1;}
+
+.Heading {
+  padding: 0.4%;
+  margin: 0%;
+  background-color: darkgray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#myChart {
+  margin: 2%;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+h3 {
+  margin: 2%;
+}
+
+.dropdown-container {
+  margin: 20px 0;
+}
+.dropdown-label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+.dropdown {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.quizblock {
+  padding: 0.4%;
+  margin-top: 2%;
+  background-color: rgb(132, 132, 132);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.quizscore {
+  float: right;
+}
+
+.AverageScore {
+  position: fixed;
+  bottom: 0;
+}
+
+.question {
+  background-color: rgb(132, 132, 132);
+}
+
+.answers {
+  background-color: rgb(189, 189, 189);
+}
